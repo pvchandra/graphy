@@ -1,0 +1,111 @@
+<style>
+.faq-container {
+    width: 80%;
+    margin: auto;
+    font-family: Arial, sans-serif;
+	background: #ffffff;   /* NEW */
+    padding: 20px;         /* NEW */
+    border-radius: 10px;   /* Optional */
+}
+
+.faq-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.q {
+    background: #fff3e6;
+    padding: 15px;
+    margin: 5px 0;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    position: relative;
+}
+
+.q::after {
+    content: '+';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.q.active::after {
+    content: '−';
+}
+
+.a {
+    display: none;
+    padding: 10px 15px;
+    background: #fff;
+    border-left: 3px solid #ffa500;
+    border-radius: 0 0 5px 5px;
+}
+</style>
+
+<div class="faq-container">
+    <div class="faq-title">Frequently Asked Questions</div>
+
+    <div class="q">1. How do I Sign Up?</div>
+    <div class="a">Click the Login button, then provide your phone number and email address. A welcome email will be sent to your registered email inbox.</div>
+
+    <div class="q">2. How to purchase the course?</div>
+    <div class="a">Click the <b>Buy Course</b> button, choose your preferred payment option, and complete the payment process.</div>
+
+    <div class="q">3. Can I pay in any other currency?</div>
+    <div class="a">Payment is accepted in India in Indian Rupees (INR). Outside India, it is the US Dollar (USD).</div>
+
+    <div class="q">4. How do I access my course?</div>
+    <div class="a">Once the payment is successful, the order confirmation and access details will be sent to your registered email address.</div>
+
+    <div class="q">5. Is there any validity for the course?</div>
+    <div class="a">Access is available from a single device for up to 365 days.</div>
+
+    <div class="q">6. How to take the course support?</div>
+    <div class="a">If you have any queries during the course, you can contact the trainer via chat or email.</div>
+
+    <div class="q">7. Is the training practical oriented?</div>
+    <div class="a">Yes, practical demonstrations and assignments are provided for most lessons wherever applicable.</div>
+
+    <div class="q">8. Is study material included in the course?</div>
+    <div class="a">Included in selected courses. Please contact us for more details.</div>
+
+    <div class="q">9. Can I get any discount?</div>
+    <div class="a">Yes, you may request a promo code, which may be available during festive seasons or special occasions.</div>
+
+    <div class="q">10. Can I get a refund or transfer my course?</div>
+    <div class="a">Once a course is purchased, it is non-refundable, non-transferable, and non-exchangeable under any circumstances.</div>
+
+    <div class="q">11. Which version of the training is offered?</div>
+    <div class="a">Different courses use different versions. You can verify it in the "About the Course" section. Please contact the trainer or take a demo session for more details.</div>
+
+    <div class="q">12. Any questions unanswered?</div>
+    <div class="a">Please check with the trainer for clarification before making a purchase, as details may change from time to time.</div>
+
+    <div class="q">13. How to contact?</div>
+    <div class="a">For any further information, please send us a message or an email. We’ll be happy to assist you.</div>
+</div>
+
+<script>
+document.querySelectorAll('.q').forEach(q => {
+  q.addEventListener('click', () => {
+    const a = q.nextElementSibling;
+    const isOpen = a.style.display === 'block';
+
+    // Collapse all
+    document.querySelectorAll('.a').forEach(x => x.style.display = 'none');
+    document.querySelectorAll('.q').forEach(x => x.classList.remove('active'));
+
+    // Open current if it was closed
+    if (!isOpen) {
+      a.style.display = 'block';
+      q.classList.add('active');
+    }
+  });
+});
+</script>
