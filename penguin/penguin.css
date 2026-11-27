@@ -1,100 +1,27 @@
 
-/* =====================================
-   SIEBEL ONLINE TRAINING - PENGUIN
-   ===================================== */
-
-#penguin-container {
+#siebel-penguin {
     position: fixed;
-    top: 25%;
+    top: 25vh;
     right: 0;
-    width: 150px;
-    z-index: 99999;
-    pointer-events: none;
-
-    transform: translateX(100%);
-    animation: penguin-visit 4.5s ease-in-out forwards;
-}
-
-/* Penguin image */
-
-#penguin-container img {
-    display: block;
-    width: 100%;
+    width: 180px;
+    max-width: 32vw;
     height: auto;
-    transform-origin: bottom center;
+    z-index: 999999;
+    pointer-events: none;
+    animation: penguin-enter 0.7s ease-out both;
 }
 
-/* Greeting bubble */
-
-#penguin-container .penguin-message {
-    position: absolute;
-    right: 100px;
-    top: -35px;
-
-    width: 190px;
-    padding: 12px 15px;
-
-    background: #ffffff;
-    color: #263238;
-
-    border-radius: 15px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
-
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-
-    opacity: 0;
-    animation: penguin-greeting 4.5s ease-in-out forwards;
-}
-
-/* Peek in, bend forward and move out */
-
-@keyframes penguin-visit {
-
-    0% {
+@keyframes penguin-enter {
+    from {
         transform: translateX(100%);
     }
-
-    15% {
+    to {
         transform: translateX(0);
-    }
-
-    25% {
-        transform: translateX(0) rotate(-5deg);
-    }
-
-    35% {
-        transform: translateX(0) rotate(5deg);
-    }
-
-    55% {
-        transform: translateX(0) rotate(0deg);
-    }
-
-    75% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(100%);
     }
 }
 
-/* Show greeting after peeking in */
-
-@keyframes penguin-greeting {
-
-    0%, 15% {
-        opacity: 0;
-    }
-
-    25%, 65% {
-        opacity: 1;
-    }
-
-    80%, 100% {
-        opacity: 0;
+@media (max-width: 600px) {
+    #siebel-penguin {
+        width: 130px;
     }
 }
